@@ -1,9 +1,8 @@
 import React from 'react';
-import { TouchableOpacity, View, GestureResponderEvent } from 'react-native';
+import { TouchableOpacity, View, } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { useTheme } from '../../context/ThemeContext';
 import { getStyles } from './ styles';
-import { GestureHandlerGestureEvent } from 'react-native-gesture-handler';
 
 interface Props {
     style?: any;
