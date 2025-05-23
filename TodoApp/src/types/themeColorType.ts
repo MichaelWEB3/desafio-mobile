@@ -8,6 +8,5 @@ export type ThemeColors = {
     contextText: string;
     mode: 'light' | 'dark';
     documentContainer: string;
-    bubbleBackgroundRight: string;
-    bubbleBackgroundLeft: string;
+    success: string;
 };

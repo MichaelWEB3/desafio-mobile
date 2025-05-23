@@ -1,7 +1,7 @@
 import { createApi, BaseQueryFn } from '@reduxjs/toolkit/query/react';
 import type { AxiosRequestConfig, AxiosError } from 'axios';
 import { api } from '@/api/api';
-import type { TaskType } from '@/types/taskType';
+import type { NewTaskType, TaskType } from '@/types/taskType';
 
 interface TasksResponse {
     tasks: TaskType[];
@@ -42,12 +42,12 @@ export const tasksApi = createApi({
         getTasks: builder.query<TasksResponse, void>({
             query: () => ({ url: '/tasks' }),
             transformResponse: (response: TasksResponse) => ({
-                tasks: response.tasks.sort((a, b) => Number(a.done) - Number(b.done)),
+                tasks: response.tasks.sort((a, b) => Number(a.id) - Number(b.id)),
             }),
             providesTags: ['Task'],
         }),
 
-        addTask: builder.mutation<void, TaskType>({
+        addTask: builder.mutation<void, NewTaskType>({
             query: task => ({
                 url: '/task/create',
                 method: 'POST',

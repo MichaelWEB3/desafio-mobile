@@ -10,8 +10,7 @@ export const lightColors: ThemeColors = {
     contextText: '#616161',
     mode: 'light',
     documentContainer: '#353435',
-    bubbleBackgroundRight: '#F5F5F5',
-    bubbleBackgroundLeft: '#00000000'
+    success: '#4CAF50',
 };
 
 export const darkColors: ThemeColors = {
@@ -24,6 +23,5 @@ export const darkColors: ThemeColors = {
     background: '#353435',
     text: '#E8E8EA',
     mode: 'dark',
-    bubbleBackgroundRight: '#353435',
-    bubbleBackgroundLeft: '#00000000'
+    success: '#4CAF50',
 };

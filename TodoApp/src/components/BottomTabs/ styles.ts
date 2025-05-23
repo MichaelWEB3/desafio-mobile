@@ -5,7 +5,7 @@ import styled from 'styled-components/native';
 export const getStyles = (colors: ThemeColors) => StyleSheet.create({
     tabBar: {
         height: 70,
-        backgroundColor: colors.background,
+        backgroundColor: colors.mode === 'light' ? '#FFF' : colors.background,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
         position: 'absolute',

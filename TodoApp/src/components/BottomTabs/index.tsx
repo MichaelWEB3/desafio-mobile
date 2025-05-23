@@ -19,6 +19,7 @@ export default function BottomTabs() {
                 tabBarShowLabel: false,
                 tabBarStyle: styles.tabBar,
             }}
+            
         >
             <Tab.Screen
                 name="Home"
@@ -54,7 +55,7 @@ export default function BottomTabs() {
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Icon
-                            name="person-outline"
+                            name="checkmark-done"
                             size={24}
                             color={focused ? currentColors.secondary : currentColors.primary}
                         />

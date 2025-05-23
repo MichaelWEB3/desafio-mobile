@@ -1,9 +1,10 @@
+import { ThemeColors } from '@/types/themeColorType';
 import { StyleSheet } from 'react-native';
 
-export const getStyles = (colors: any) =>
+export const getStyles = (colors: ThemeColors) =>
     StyleSheet.create({
         container: {
-            backgroundColor: colors.card,
+            backgroundColor: colors.primary,
             borderRadius: 12,
             padding: 16,
             marginBottom: 12,
@@ -24,10 +25,17 @@ export const getStyles = (colors: any) =>
             gap: 12,
         },
         iconBtn: {
-            backgroundColor: '#f0f0f0',
+            backgroundColor:colors.documentDrodown,
             padding: 10,
             borderRadius: 50,
             alignItems: 'center',
             justifyContent: 'center',
         },
+        alertBox: {
+            backgroundColor: '#f44336',
+            padding: 10,
+            borderRadius: 8,
+            marginBottom: 10,
+        },
+
     });
