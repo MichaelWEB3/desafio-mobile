@@ -7,7 +7,7 @@ import {
     Alert,
 } from 'react-native';
 import type { TaskType } from '@/types/taskType';
-import { useDeleteTaskMutation, useGetTasksQuery } from '@/redux/features/task';
+import { useDeleteTaskMutation, useUpdateTaskMutation } from '@/redux/features/task';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { getStyles } from './styles';
 import { useTheme } from '@/context/ThemeContext';
@@ -15,16 +15,15 @@ import { Message } from '../ErrorSuccesMessage';
 
 interface TaskItemProps {
     task: TaskType;
-    onDeleteSuccess: () => void;
     onEdit: (task: TaskType) => void;
 }
 
-export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSuccess }) => {
+export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, }) => {
     const { currentColors } = useTheme();
     const styles = getStyles(currentColors);
     const [deleteTask] = useDeleteTaskMutation();
 
-    const [deleteError, setDeleteError] = useState(false);
+    const [erro, setError] = useState('');
 
     const fadeAnim = useRef(new Animated.Value(0)).current;
     const lineAnim = useRef(new Animated.Value(0)).current;
@@ -56,10 +55,9 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSucces
 
                         try {
                             await deleteTask({ id: task.id.toString() }).unwrap();
-                            onDeleteSuccess();
                         } catch (error) {
                             console.error('Erro ao excluir tarefa', error);
-                            setDeleteError(true);
+                            setError('Erro ao excluir taref');
                         }
                     },
                 },
@@ -72,6 +70,23 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSucces
         inputRange: [0, 1],
         outputRange: ['0%', '100%'],
     });
+
+    const [updateTask] = useUpdateTaskMutation();
+
+
+    const handleToggleDone = async () => {
+        try {
+            await updateTask({
+                id: task.id,
+                title: task.title,
+                description: task.description,
+                done: true,
+            }).unwrap();
+        } catch (error) {
+            console.error('Erro ao atualizar status da tarefa', error);
+            setError('Erro ao atualizar status da tarefa');
+        }
+    };
 
     return (
         <>
@@ -89,10 +104,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSucces
                         borderRadius: 12,
                         padding: 12,
                         marginBottom: 12,
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                        alignItems: 'center',
-                    },
+                    }
                 ]}
             >
                 <View style={{ flex: 1 }}>
@@ -102,16 +114,9 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSucces
                             { color: currentColors.contextText, fontSize: 16 },
                         ]}
                     >
-                        {task.title}
+                        ID #{task.id.toString()} - {task.title}
                     </Text>
-                    <Text
-                        style={[
-                            styles.text,
-                            { color: currentColors.contextText, fontSize: 16 },
-                        ]}
-                    >
-                        {task.id}
-                    </Text>
+
                     <Animated.View
                         style={{
                             height: 1,
@@ -137,15 +142,34 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, onDeleteSucces
                         onPress={() => onEdit(task)}
                         style={styles.iconBtn}
                     >
-                        <Ionicons name="create-outline" size={20} color="#4CAF50" />
+                        <Ionicons name="create-outline" size={20} color="#87CEEB" />
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={handleDelete} style={styles.iconBtn}>
-                        <Ionicons name="trash-outline" size={20} color="#F44336" />
+                    <TouchableOpacity
+                        onPress={handleDelete}
+                        style={styles.iconBtn}
+                    >
+                        <Ionicons
+                            name="trash-outline"
+                            size={20}
+                            color="#F44336"
+                        />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={handleToggleDone}
+                        style={styles.iconBtn}
+                    >
+                        <Ionicons
+                            name="checkmark"
+                            size={20}
+                            color="#4CAF50" />
                     </TouchableOpacity>
                 </View>
             </Animated.View>
 
-            {deleteError && (
+            {erro && (
+                <Message type="error" message="Erro ao excluir tarefa!" />
+            )}
+            {erro && (
                 <Message type="error" message="Erro ao excluir tarefa!" />
             )}
         </>

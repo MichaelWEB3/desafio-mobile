@@ -34,7 +34,7 @@ type RouteParams = {
     };
 };
 
-export default function CreateTask() {
+export default function CreateTaskScreen() {
     const navigation = useNavigation();
     const route = useRoute<RouteProp<RouteParams, 'params'>>();
     const { taskToEdit } = route.params || {};
@@ -78,15 +78,15 @@ export default function CreateTask() {
     const [updateTask, { isLoading: isUpdating }] = useUpdateTaskMutation();
 
     const handleSave = async (data: TaskFormData) => {
-        setErrorMessage(null);
-        setSuccessMessage(null);
+
         try {
+            console.log(taskToEdit?.id)
             if (taskToEdit) {
                 updateTask({
                     id: Number(taskToEdit.id),
                     title: data.title,
                     description: data.description,
-                    done: taskToEdit?.done ?? false, // ou o valor original da task
+                    done: taskToEdit?.done ?? false,
                 });
                 setSuccessMessage('Tarefa atualizada com sucesso!');
             } else {
@@ -94,15 +94,26 @@ export default function CreateTask() {
                 setSuccessMessage('Tarefa criada com sucesso!');
             }
 
-            navigation.goBack();
+            //  navigation.goBack();
         } catch (error) {
             setErrorMessage('Erro ao salvar tarefa!');
             console.error('Erro ao salvar tarefa:', error);
+        } finally {
+            setTimeout(() => {
+                setErrorMessage(null);
+                setSuccessMessage(null);
+            }, 1000)
         }
     };
 
     return (
         <View style={styles.container}>
+            <TouchableOpacity
+                onPress={() => navigation.goBack()}
+                style={styles.arrowBackButton}
+            >
+                <Icon name="arrow-left" size={20} color={currentColors.contextText} />
+            </TouchableOpacity>
             <View style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 8 }}>
                 <Icon
                     name="edit-3"

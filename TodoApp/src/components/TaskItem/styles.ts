@@ -13,6 +13,9 @@ export const getStyles = (colors: ThemeColors) =>
             shadowOffset: { width: 0, height: 2 },
             shadowRadius: 6,
             elevation: 2,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
         },
         text: {
             fontSize: 16,
@@ -25,7 +28,7 @@ export const getStyles = (colors: ThemeColors) =>
             gap: 12,
         },
         iconBtn: {
-            backgroundColor:colors.documentDrodown,
+            backgroundColor: '#EDEDED',
             padding: 10,
             borderRadius: 50,
             alignItems: 'center',

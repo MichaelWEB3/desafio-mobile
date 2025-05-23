@@ -32,4 +32,14 @@ export const getStyles = (colors: ThemeColors) =>
             color: 'white',
             fontWeight: 'bold',
         },
+        arrowBackButton: {
+            width: 40,
+            height: 40,
+            borderRadius: 20,
+            backgroundColor: colors.secondary + '22',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 16,
+            color:colors.contextText,
+        },
     });

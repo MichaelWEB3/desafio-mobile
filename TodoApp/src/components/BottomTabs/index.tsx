@@ -5,6 +5,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { AddButton } from './AddButton';
 import { getStyles } from './ styles';
 import { HomeScreen } from '../../screens/Home';
+import { DoneTaskScreen } from '@/screens/DonaTask';
 
 const Tab = createBottomTabNavigator();
 
@@ -50,8 +51,8 @@ export default function BottomTabs() {
             />
 
             <Tab.Screen
-                name="Profile"
-                component={HomeScreen}
+                name="DoneTask"
+                component={DoneTaskScreen}
                 options={{
                     tabBarIcon: ({ focused }) => (
                         <Icon

@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const tasksContainer = require('./tasks.json');
 
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
 app.use(bodyParser.json());
 
@@ -62,7 +62,7 @@ app.get('/task/:id', (req, res) => {
  * If the provided id is not a valid number return a status code 400.
  */
 app.put('/task/update', (req, res) => {
-  const id = parseInt(req.body.id , 10);
+  const id = parseInt(req.body.id, 10);
 
   if (!Number.isNaN(id)) {
     const task = tasksContainer.tasks.find(item => item.id === id);
@@ -70,6 +70,7 @@ app.put('/task/update', (req, res) => {
     if (task !== null) {
       task.title = req.body.title;
       task.description = req.body.description;
+      task.done = req.body.done;
       return res.status(200).json({
         task,
       });
@@ -99,6 +100,7 @@ app.post('/task/create', (req, res) => {
     id: tasksContainer.tasks.length,
     title: req.body.title,
     description: req.body.description,
+    done: false,
   };
 
   tasksContainer.tasks.push(task);
@@ -123,7 +125,7 @@ app.delete('/task/delete', (req, res) => {
 
   if (!Number.isNaN(id)) {
     const task = tasksContainer.tasks.find(item => item.id === id);
-  
+
     if (task) {
       const taskIndex = tasksContainer.tasks;
       tasksContainer.tasks.splice(taskIndex, 1);

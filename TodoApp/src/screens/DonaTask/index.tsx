@@ -12,13 +12,13 @@ import { ErroMessageApi } from '@/components/ErrorMessageApi';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { NavigationType } from '@/types/navigationTypes';
 
-export const HomeScreen = () => {
+export const DoneTaskScreen = () => {
     const { currentColors } = useTheme();
     const styles = getStyles(currentColors);
     const navigation = useNavigation<NavigationType>();
 
     const handleEditTask = (task: TaskType) => {
-        navigation.navigate('CreateTask', { taskToEdit: { id: task.id, title: task.title, description: task.description } });
+        navigation.navigate('CreateTask', { taskToEdit: { title: task.title, description: task.description } });
     };
     const { data, isLoading, isError, refetch } = useGetTasksQuery();
     useFocusEffect(
@@ -60,14 +60,13 @@ export const HomeScreen = () => {
         );
     }
 
-
     const tasks = (data?.tasks || [])
-        .filter(task => task.done !== true)
+        .filter(task => task.done === true)
         .sort((a, b) => Number(a.id) - Number(b.id));
-
+        
     return (
         <View style={styles.container}>
-            <Text style={[styles.title, { fontWeight: '700' }]}>Tarefas</Text>
+            <Text style={[styles.title, { fontWeight: '700' }]}>Tarefas Concluidas</Text>
 
             {tasks.length === 0 ? (
                 <EmptyMessage

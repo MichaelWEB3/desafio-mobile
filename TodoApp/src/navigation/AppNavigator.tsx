@@ -7,11 +7,13 @@ import { getStyles } from './styles';
 import { useTheme } from '@/context/ThemeContext';
 import CreateTask from '@/screens/AddTask';
 import BottomTabs from '@/components/BottomTabs';
+import CreateTaskScreen from '@/screens/AddTask';
 
 export type RootStackParamList = {
     Tabs: undefined;
     CreateTask: {
         taskToEdit?: {
+            id?: Number;
             title: string;
             description: string;
             done?: boolean;
@@ -52,7 +54,7 @@ function InnerNavigator({ currentColors, styles }: { currentColors: any; styles:
                         <Stack.Screen name="Tabs" component={BottomTabs} />
                         <Stack.Screen
                             name="CreateTask"
-                            component={CreateTask}
+                            component={CreateTaskScreen}
                             options={{
                                 presentation: 'modal',
                             }}
