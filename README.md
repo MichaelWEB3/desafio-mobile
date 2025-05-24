@@ -4,8 +4,6 @@ Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app m
 
 ## 🎥 Demonstração em Vídeo
 
-<h2>🎥 Demonstração em Vídeo</h2>
-
 <p>
   <a href="https://youtube.com/shorts/gsW-9P7LqxQ" target="_blank" rel="noopener noreferrer">
     <img
@@ -15,10 +13,13 @@ Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app m
   </a>
 </p>
 
+<br><br>
+
 <div align="center">
   <img src="/assets/preview/previewDark.png" alt="Preview Dark" width="300" />
   <img src="/assets/preview/previewLight.png" alt="Preview Light" width="300" />
 </div>
+
 
 <br/>
 
