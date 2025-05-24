@@ -1,37 +1,139 @@
-# Desafio Mobile Bennu
+# ✅ Bennu Task App
 
-## 🚀 Sobre o desafio
+Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app mobile em React Native**, desenvolvida com foco em **performance, organização e escalabilidade**.
 
-Construa uma aplicação para que possamos entender o seu nível de conhecimento em React Native.
+<br/>
 
-O código deve consumir da API que será enviada junto com o teste.
-Certifique-se de instalar as dependencias `npm install` e rodar o server: `npm start`, o server.js está devidamente documentado.
+<p align="center">
+  <img src="https://img.shields.io/badge/React_Native-0.79.0-blue?style=flat&logo=react" />
+  <img src="https://img.shields.io/badge/Node.js-18+-green?style=flat&logo=node.js" />
+  <img src="https://img.shields.io/badge/TypeScript-blue?style=flat&logo=typescript" />
+  <img src="https://img.shields.io/badge/Redux-Toolkit-critical?style=flat&logo=redux" />
+  <img src="https://img.shields.io/badge/Jest-Tested-%23C21325?style=flat&logo=jest" />
+</p>
 
-**O Objetivo do teste é verificar a qualidade do código e tomada de decisões.**
+---
 
-## Como fazer?
+## 🧠 Tecnologias
 
-Faça um Fork deste desafio e crie o seu projeto (ou workspace) usando a sua versão desse repositório, tão logo acabe o desafio, submeta um pull request.
+### 📱 **Mobile (React Native + TypeScript)**
 
-## Requisitos
+- ⚛️ React Native `0.79.0`
+- 📜 TypeScript
+- 🧭 React Navigation
+- 🧵 Styled Components
+- 🧠 Redux Toolkit + Persist
+- 🔁 Redux Query
+- 🌿 Dotenv
+- 🧪 Jest + Testing Library
 
-Desenvolver uma aplicação de TODO pensando nos seguintes pontos:
+### 🌐 **Backend (Node.js + Express)**
 
-- Tecnologias: React e Redux
-- Typescript
-- O layout deve ser responsivo
-- Styled Components e Styled System
-- CRUD de Tarefas (Criar, Listar, Editar, Deletar)
-- Opção de Completar Tarefas
+- Node.js `18+`
+- Express.js
+- API RESTful
+- CRUD completo de tarefas
 
-**Bônus:**
+---
 
-- React Navigation
-- React Hooks
-- Yarn
+## 📦 Estrutura do Projeto
 
-Se sentir que precisa de algo que não está especificado, pode adicionar, mas não é obrigatório. 
+📦 BennuTaskApp/
+├── backend/ # API Node.js com Express
+└── TodoApp/ # Aplicativo React Native
 
-Fique a vontade para entrar em contato em caso de dúvidas :)
 
-Boa sorte e divirta-se!!!
+---
+
+## 🚀 Funcionalidades
+
+✅ Visualização por status: **Todas**, **Ativas**, **Concluídas**  
+📝 Criação, edição e exclusão de tarefas  
+✨ Marcação como concluída com **animação fluida**  
+💾 Persistência com **Redux Persist**  
+🔗 Integração com a API usando **Redux Query**
+✨ Modo Claro e Modo escuro conforme o aparelho do usurio esteja **Dark/Light**  
+
+---
+
+## 📲 Rodando o App Mobile
+
+```bash
+# 1. Vá até a pasta do app
+cd TodoApp
+
+# 2. Instale as dependências
+yarn
+
+# 3. Inicie o Metro Bundler
+yarn start
+
+# 4. Redirecione a porta para o Android
+adb reverse tcp:9001 tcp:9001
+
+# 5. Execute no emulador android
+yarn android
+
+# 5. Execute no emulador IOS
+yarn IOS
+
+
+🧪 Testes
+# 1. Vá até a pasta do app
+cd TodoApp
+
+# 2 Execute os testes unitários
+yarn test
+
+
+🌐 Rodando o Backend
+
+
+# 1. Instale as dependências
+npm
+
+# 3. Inicie o servidor
+npm start
+
+
+⚙️ Variáveis de Ambiente
+
+Crie um arquivo .env em TodoApp/:
+
+API_BASE_URL=...
+
+👨‍💻 Scripts Úteis (package.json)
+
+"scripts": {
+  "android": "react-native run-android",
+  "ios": "react-native run-ios",
+  "lint": "eslint .",
+  "start": "react-native start",
+  "test": "jest"
+}
+
+📁 Principais Dependências
+
+react-native
+react-redux, @reduxjs/toolkit
+redux-persist
+redux-query
+styled-components
+zod, react-hook-form
+jest, @testing-library/react-native
+
+
+🧼 Padrões e Boas Práticas
+
+Componentização e organização modular
+Validações com zod
+Formulários otimizados com react-hook-form
+Tipagem rigorosa com TypeScript
+Linting e formatação com eslint e prettier
+
+
+✨ Contribuições
+
+Sinta-se livre para contribuir com novas ideias, melhorias e correções. Basta abrir uma issue ou pull request! 🚀
+
+<p align="center"> Feito com 💙 por <strong>Michael</strong> </p> ```
