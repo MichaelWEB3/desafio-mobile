@@ -2,11 +2,22 @@
 
 Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app mobile em React Native**, desenvolvida com foco em **performance, organização e escalabilidade**.
 
-🎥 [Assista à demonstração em vídeo](https://youtube.com/shorts/gsW-9P7LqxQ)
+## 🎥 Demonstração em Vídeo
+
+<h2>🎥 Demonstração em Vídeo</h2>
+
+<p>
+  <a href="https://youtube.com/shorts/gsW-9P7LqxQ" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://img.shields.io/badge/▶️%20Assistir%20a%20Demo%20no%20YouTube-red?style=for-the-badge&logo=youtube&logoColor=white"
+      alt="Assista à demonstração do Bennu Task App"
+    />
+  </a>
+</p>
 
 <div align="center">
-  <img src="/assets/preview/previewLight.png" alt="Preview Light" width="300" />
   <img src="/assets/preview/previewDark.png" alt="Preview Dark" width="300" />
+  <img src="/assets/preview/previewLight.png" alt="Preview Light" width="300" />
 </div>
 
 <br/>
