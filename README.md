@@ -2,6 +2,12 @@
 
 Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app mobile em React Native**, desenvolvida com foco em **performance, organização e escalabilidade**.
 
+![Preview do App](../../src/assets/preview/previewLight.png)
+![Preview do App](../../src/assets/preview/previewDark.png)
+🎥 [Assista à demonstração em vídeo](https://youtube.com/shorts/gsW-9P7LqxQ)
+
+
+
 <br/>
 
 <p align="center">
@@ -135,7 +141,6 @@ Linting e formatação com eslint e prettier
 ✨ Contribuições
 
 Sinta-se livre para contribuir com novas ideias, melhorias e correções. Basta abrir uma issue ou pull request! 🚀
-</code></pre>
+```
 
-
-<p align="center"> Feito com 💙 por <strong>Michael</strong> </p> ```
+<p align="center"> Feito com 💙 por <strong>Michael</strong> </p> 
