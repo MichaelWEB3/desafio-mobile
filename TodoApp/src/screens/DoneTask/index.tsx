@@ -5,7 +5,7 @@ import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { useTheme } from '../../context/ThemeContext';
 import { getStyles } from './styles';
 import type { TaskType } from '@/types/taskType';
-import { useAddTaskMutation, useGetTasksQuery } from '@/redux/features/task';
+import { useGetTasksQuery } from '@/redux/features/task';
 import { TaskItem } from '@/components/TaskItem';
 import { EmptyMessage } from '@/components/EmptyMessage';
 import { ErroMessageApi } from '@/components/ErrorMessageApi';
@@ -63,7 +63,7 @@ export const DoneTaskScreen = () => {
     const tasks = (data?.tasks || [])
         .filter(task => task.done === true)
         .sort((a, b) => Number(a.id) - Number(b.id));
-        
+
     return (
         <View style={styles.container}>
             <Text style={[styles.title, { fontWeight: '700' }]}>Tarefas Concluidas</Text>

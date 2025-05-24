@@ -15,7 +15,7 @@ export const EmptyMessage: React.FC<EmptyMessageProps> = ({ title, description }
 
     return (
         <View style={styles.emptyBox}>
-            <Ionicons name="checkmark-done-outline" size={50} color={currentColors.text} />
+            <Ionicons  testID="icon" name="checkmark-done-outline" size={50} color={currentColors.text} />
             <Text style={styles.emptyTitle}>{title}</Text>
             <Text style={styles.emptyMessage}>{description}</Text>
         </View>

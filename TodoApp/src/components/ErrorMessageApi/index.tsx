@@ -16,7 +16,7 @@ export const ErroMessageApi: React.FC<ErroMessageProps> = ({ title, description 
     return (
         <View style={styles.container}>
             <View style={styles.errorBox}>
-                <Ionicons name="warning-outline" size={40} color="#FF4D4F" />
+                <Ionicons testID="icon" name="warning-outline" size={40} color="#FF4D4F" />
                 <Text style={styles.errorTitle}>{title}</Text>
                 <Text style={styles.errorMessage}>
                     {description}

@@ -43,6 +43,9 @@ export default function CreateTaskScreen() {
 
     const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
     const [successMessage, setSuccessMessage] = React.useState<string | null>(null);
+   
+    const [addTask, { isLoading: isAdding }] = useAddTaskMutation();
+    const [updateTask, { isLoading: isUpdating }] = useUpdateTaskMutation();
 
     const {
         register,
@@ -74,13 +77,10 @@ export default function CreateTaskScreen() {
                 : currentColors.text + '88',
     });
 
-    const [addTask, { isLoading: isAdding }] = useAddTaskMutation();
-    const [updateTask, { isLoading: isUpdating }] = useUpdateTaskMutation();
 
     const handleSave = async (data: TaskFormData) => {
 
         try {
-            console.log(taskToEdit?.id)
             if (taskToEdit) {
                 updateTask({
                     id: Number(taskToEdit.id),
@@ -133,6 +133,7 @@ export default function CreateTaskScreen() {
             </Text>
 
             <TextInput
+                testID='title'
                 placeholder="Título da tarefa"
                 placeholderTextColor={currentColors.contextText + '88'}
                 value={title}
@@ -154,6 +155,7 @@ export default function CreateTaskScreen() {
             )}
 
             <TextInput
+                testID='description'
                 placeholder="Descrição"
                 placeholderTextColor={currentColors.text + '88'}
                 value={description}
@@ -180,6 +182,7 @@ export default function CreateTaskScreen() {
             )}
 
             <TouchableOpacity
+                testID='add-or-update-task-button'
                 onPress={handleSubmit(handleSave)}
                 disabled={!isValid || isAdding || isUpdating}
                 style={[

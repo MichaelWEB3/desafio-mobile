@@ -1,6 +1,6 @@
 import React from 'react';
 import AppNavigator from './src/navigation/AppNavigator';
-import { ThemeProvider, useTheme } from './src/context/ThemeContext'; // ajuste o path conforme necessário
+import { ThemeProvider } from './src/context/ThemeContext';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './src/redux/store'

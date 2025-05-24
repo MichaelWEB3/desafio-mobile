@@ -5,7 +5,7 @@ import { useTheme } from '../../context/ThemeContext';
 import { AddButton } from './AddButton';
 import { getStyles } from './ styles';
 import { HomeScreen } from '../../screens/Home';
-import { DoneTaskScreen } from '@/screens/DonaTask';
+import { DoneTaskScreen } from '@/screens/DoneTask';
 
 const Tab = createBottomTabNavigator();
 

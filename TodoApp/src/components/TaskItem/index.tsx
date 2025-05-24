@@ -139,12 +139,14 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, }) => {
 
                 <View style={styles.buttons}>
                     <TouchableOpacity
+                        accessibilityRole="button"
                         onPress={() => onEdit(task)}
                         style={styles.iconBtn}
                     >
                         <Ionicons name="create-outline" size={20} color="#87CEEB" />
                     </TouchableOpacity>
                     <TouchableOpacity
+                        accessibilityRole="button"
                         onPress={handleDelete}
                         style={styles.iconBtn}
                     >
@@ -154,7 +156,8 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, }) => {
                             color="#F44336"
                         />
                     </TouchableOpacity>
-                    <TouchableOpacity
+                    {!task.done && <TouchableOpacity
+                        accessibilityRole="button"
                         onPress={handleToggleDone}
                         style={styles.iconBtn}
                     >
@@ -162,7 +165,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, }) => {
                             name="checkmark"
                             size={20}
                             color="#4CAF50" />
-                    </TouchableOpacity>
+                    </TouchableOpacity>}
                 </View>
             </Animated.View>
 

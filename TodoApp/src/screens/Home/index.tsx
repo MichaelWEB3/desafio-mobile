@@ -5,7 +5,7 @@ import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { useTheme } from '../../context/ThemeContext';
 import { getStyles } from './styles';
 import type { TaskType } from '@/types/taskType';
-import { useAddTaskMutation, useGetTasksQuery } from '@/redux/features/task';
+import { useGetTasksQuery } from '@/redux/features/task';
 import { TaskItem } from '@/components/TaskItem';
 import { EmptyMessage } from '@/components/EmptyMessage';
 import { ErroMessageApi } from '@/components/ErrorMessageApi';
@@ -76,6 +76,7 @@ export const HomeScreen = () => {
                 />
             ) : (
                 <FlashList
+                    testID="Task title"
                     data={tasks}
                     keyExtractor={(item: TaskType) => item.id.toString()}
                     estimatedItemSize={70}
