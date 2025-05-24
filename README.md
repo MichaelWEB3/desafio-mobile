@@ -135,5 +135,7 @@ Linting e formatação com eslint e prettier
 ✨ Contribuições
 
 Sinta-se livre para contribuir com novas ideias, melhorias e correções. Basta abrir uma issue ou pull request! 🚀
+</code></pre>
+
 
 <p align="center"> Feito com 💙 por <strong>Michael</strong> </p> ```

@@ -43,7 +43,7 @@ export default function CreateTaskScreen() {
 
     const [errorMessage, setErrorMessage] = React.useState<string | null>(null);
     const [successMessage, setSuccessMessage] = React.useState<string | null>(null);
-   
+
     const [addTask, { isLoading: isAdding }] = useAddTaskMutation();
     const [updateTask, { isLoading: isUpdating }] = useUpdateTaskMutation();
 
@@ -52,6 +52,7 @@ export default function CreateTaskScreen() {
         setValue,
         handleSubmit,
         watch,
+        reset,
         formState: { errors, isValid },
     } = useForm<TaskFormData>({
         resolver: zodResolver(taskSchema),
@@ -91,6 +92,7 @@ export default function CreateTaskScreen() {
                 setSuccessMessage('Tarefa atualizada com sucesso!');
             } else {
                 await addTask(data).unwrap();
+                reset();
                 setSuccessMessage('Tarefa criada com sucesso!');
             }
 
