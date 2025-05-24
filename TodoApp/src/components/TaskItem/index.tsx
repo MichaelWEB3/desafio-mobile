@@ -130,7 +130,7 @@ export const TaskItem: React.FC<TaskItemProps> = ({ task, onEdit, }) => {
                     <Text
                         style={[
                             styles.text,
-                            { color: currentColors.text + 'AA', fontSize: 13 },
+                            { color: currentColors.contextText + 'AA', fontSize: 13 },
                         ]}
                     >
                         {task.description}

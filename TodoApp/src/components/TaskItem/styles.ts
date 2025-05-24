@@ -19,7 +19,7 @@ export const getStyles = (colors: ThemeColors) =>
         },
         text: {
             fontSize: 16,
-            color: colors.text,
+            color: colors.contextText,
             marginBottom: 12,
         },
         buttons: {
