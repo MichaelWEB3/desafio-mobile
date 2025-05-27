@@ -16,8 +16,8 @@ Uma aplicação de lista de tarefas (To-Do) com **backend em Node.js** e **app m
 <br><br>
 
 <div align="center">
-  <img src="/assets/preview/previewDark.png" alt="Preview Dark" width="300" />
-  <img src="/assets/preview/previewLight.png" alt="Preview Light" width="300" />
+Modo escuro  <img src="/assets/preview/previewDark.png" alt="Preview Dark" width="300" />
+Modo claro   <img src="/assets/preview/previewLight.png" alt="Preview Light" width="300" />
 </div>
 
 
